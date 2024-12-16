@@ -1,0 +1,17 @@
+{
+  "name": "PHP Environment",
+  "runArgs": ["--user", "vscode"],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "felixfbecker.php-debug",
+        "bmewburn.vscode-intelephense-client"
+      ]
+    }
+  },
+  "onCreateCommand": "sudo apt update && sudo apt install -y php-cli php-mbstring php-xml composer",
+  "postCreateCommand": "composer --version && php --version",
+  "ports": [
+    "8000:8000"
+  ]
+}
