@@ -1,17 +1,20 @@
 {
-  "name": "PHP Environment",
-  "runArgs": ["--user", "vscode"],
-  "customizations": {
-    "vscode": {
-      "extensions": [
-        "felixfbecker.php-debug",
-        "bmewburn.vscode-intelephense-client"
-      ]
-    }
+  "name": "PHP & MySQL Development Environment",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/workspace",
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash"
   },
-  "onCreateCommand": "sudo apt update && sudo apt install -y php-cli php-mbstring php-xml composer",
-  "postCreateCommand": "composer --version && php --version",
-  "ports": [
-    "8000:8000"
-  ]
+  "extensions": [
+    "ms-azuretools.vscode-docker",
+    "bmewburn.vscode-intelephense-client", // PHPの補完
+    "mtxr.sqltools"                       // SQL操作用
+  ],
+  "forwardPorts": [8080, 3306],
+  "remoteEnv": {
+    "DATABASE_URL": "mysql://user:password@db:3306/mydb"
+  },
+  "postCreateCommand": "composer install", // 必要に応じてComposerを使用
+  "remoteUser": "vscode"
 }
