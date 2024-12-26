@@ -1,20 +1,16 @@
 {
-  "name": "PHP & MySQL Development Environment",
-  "dockerComposeFile": "docker-compose.yml",
-  "service": "app",
-  "workspaceFolder": "/workspace",
+  "name": "PHP, MySQL, HTML/CSS Development",
+  "features": {},
   "settings": {
-    "terminal.integrated.shell.linux": "/bin/bash"
+    "editor.formatOnSave": true
   },
   "extensions": [
-    "ms-azuretools.vscode-docker",
-    "bmewburn.vscode-intelephense-client", // PHPの補完
-    "mtxr.sqltools"                       // SQL操作用
+    "felixfbecker.php-debug",  // PHPデバッグ用
+    "bmewburn.vscode-intelephense-client",  // PHP補完・Lint用
+    "esbenp.prettier-vscode",  // HTML/CSS/JSのフォーマット
+    "dbaeumer.vscode-eslint"  // JSのLint用
   ],
-  "forwardPorts": [8080, 3306],
-  "remoteEnv": {
-    "DATABASE_URL": "mysql://user:password@db:3306/mydb"
-  },
-  "postCreateCommand": "composer install", // 必要に応じてComposerを使用
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y php-cli php-mysql apache2 mysql-server",
+  "forwardPorts": [80, 3306],
   "remoteUser": "vscode"
 }
