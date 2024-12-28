@@ -1,15 +1,13 @@
 {
-			"name": "PHP and MySQL Enviroment",
-			"image": "mcr.microsoft.com/devcontainer/php:8.2-apache",
-			"postCreateCommand": "sudo apt-get update && sudo apt-get install -y mysql-server && sudo survice mysql start",
-			"settings": {
-				"editor.formatOnSave": true
-			},
-			"extensions":[
-				"felixfbecker.php-debug",
-				"bmewburn.vscode-intelephense-client",
-				"esbenp.prettier-vscode"
-			],
-			"forwardPorts":[3306, 80],
-			"remoteUser": "vscode"
-		}	
+	"name": "MySQL Dev Environment",
+	"image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+	"features":{
+		"ghcr.io/devcontainers/features/mysql:1":{
+			"version": "8",
+			"password":"your_password"
+		}
+	},
+	"forwardPorts":[3306],
+	"postCreateCommand": "mysql --version",
+	"remoteUser": "vscode"
+}
