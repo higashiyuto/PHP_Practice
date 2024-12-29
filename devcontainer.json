@@ -1,6 +1,6 @@
 {
   "name": "MySQL Dev Environment",
-  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
   "features": {
     "ghcr.io/devcontainers/features/mysql:1": {
       "version": "8",
@@ -8,6 +8,6 @@
     }
   },
   "forwardPorts": [3306],
-  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y mysql-client && mysql --version",
+  "postCreateCommand": "apt-get update && apt-get install -y mysql-client && mysql --version",
   "remoteUser": "vscode"
 }
