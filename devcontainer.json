@@ -8,6 +8,6 @@
     }
   },
   "forwardPorts": [3306],
-  "postCreateCommand": "apt-get update && apt-get install -y mysql-client && /usr/bin/mysql --version",
+  "postCreateCommand": " sudo apt-get update && sudo apt-get install -y mysql-client && mysql --version",
   "remoteUser": "vscode"
 }
