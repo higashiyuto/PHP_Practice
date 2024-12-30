@@ -1,13 +1,11 @@
 {
   "name": "MySQL Dev Environment",
-  "image": "mcr.microsoft.com/devcontainers/universal:2",
-  "features": {
-    "ghcr.io/devcontainers/features/mysql:1": {
-      "version": "8",
-      "password": "your_password"
-    }
-  },
-  "forwardPorts": [3306],
-  "postCreateCommand": "apt-get update && apt-get install -y mysql-client && mysql --version",
-  "remoteUser": "vscode"
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "mysql",
+  "workspaceFolder": "/workspace",
+  "settings": {},
+  "extensions": [
+    "ms-mysql.mysql"
+  ],
+  "postCreateCommand": "mysql --version"
 }
