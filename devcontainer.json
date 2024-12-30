@@ -7,7 +7,7 @@
     }
   },
   "forwardPorts": [3306],
-  "postCreateCommand": "sudo service mysql start",
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y mysql-client && sudo service mysql start",
   "customizations": {
     "vscode": {
       "settings": {
