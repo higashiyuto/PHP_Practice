@@ -1,11 +1,19 @@
 {
   "name": "MySQL Dev Environment",
-  "dockerComposeFile": "docker-compose.yml",
-  "service": "mysql",
-  "workspaceFolder": "/workspace",
-  "settings": {},
-  "extensions": [
-    "ms-mysql.mysql"
-  ],
-  "postCreateCommand": "mysql --version"
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/devcontainers/features/mysql:1": {
+      "version": "8.0"
+    }
+  },
+  "forwardPorts": [3306],
+  "postCreateCommand": "sudo service mysql start",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+      },
+      "extensions": ["ms-mysql.mysql"]
+    }
+  }
 }
