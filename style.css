@@ -1,0 +1,52 @@
+body{
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f9f9f9;
+}
+
+.container{
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+h1{
+    text-align: center;
+    color: #333;
+}
+
+.device-info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.device-info button{
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table th, table td{
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+table th{
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
